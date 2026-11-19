@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poker Academia Shorts Publisher</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      color: #241A14;
+      background: #FAF1E1;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #241A14;
+      margin-bottom: 8px;
+    }
+    .app-name { color: #D6293A; }
+    .last-updated {
+      font-size: 14px;
+      color: #5C4B3D;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #241A14;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E3CFA4;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #241A14;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    p, li {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #5C4B3D;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li { margin-bottom: 8px; }
+    a { color: #D6293A; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: #241A14; }
+    .highlight {
+      background: #F2E4C9;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid #E3CFA4;
+    }
+    th {
+      background: #D6293A;
+      color: #FFFCF6;
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: #FFFCF6; }
+    tr:nth-child(odd) { background: #FAF1E1; }
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 2px solid #E3CFA4;
+      font-size: 14px;
+      color: #5C4B3D;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1><span class="app-name">Poker Academia</span> Shorts Publisher</h1>
+  <p class="last-updated">Last updated: November 19, 2026</p>
+  <div class="highlight">
+    <strong>Poker Academia Shorts Publisher uses YouTube API Services.</strong> It is an internal tool: its only user is the owner of the Poker Academia YouTube channel. It is not offered to the public and cannot access any other channel.
+  </div>
+
+  <h2>What it does</h2>
+  <p>Poker Academia publishes short educational poker quizzes (vertical videos of about 16 seconds) on its own YouTube channel, <a href="https://www.youtube.com/@Poker-Academia">youtube.com/@Poker-Academia</a>. The content is educational only: no real-money gambling, no betting links, no promises of winnings.</p>
+  <p>The Shorts Publisher automates the last step of that workflow, so that each approved video goes online at a regular time without a manual upload:</p>
+  <ol>
+    <li><strong>Production.</strong> Each week, the quiz videos are rendered from our own poker training material.</li>
+    <li><strong>Human review.</strong> The channel owner watches every video on an internal review page and approves or rejects it. Nothing is uploaded without this approval.</li>
+    <li><strong>Upload.</strong> Once a day, the tool uploads the approved video of the day to the Poker Academia channel with the YouTube Data API (<code>videos.insert</code>), with its title, description, tags, category and language.</li>
+    <li><strong>Log.</strong> The tool records the returned video ID and URL in the internal publication log, so the same video is never uploaded twice.</li>
+  </ol>
+
+  <h2>Access to YouTube data</h2>
+  <ul>
+    <li>Authorization: OAuth 2.0, granted once by the channel owner.</li>
+    <li>Scope: <code>https://www.googleapis.com/auth/youtube.upload</code> only.</li>
+    <li>The tool does not read viewers' data, comments, analytics or any other channel.</li>
+    <li>Expected volume: 1 to 2 uploads per day, well within the default quota.</li>
+  </ul>
+
+  <h2>Policies</h2>
+  <ul>
+    <li><a href="./youtube-publisher-privacy.html">Privacy Policy</a> (how the tool uses YouTube API Services and how to revoke access)</li>
+    <li><a href="./youtube-publisher-terms.html">Terms of Use</a></li>
+    <li><a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a></li>
+    <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+  </ul>
+
+  <div class="footer">
+    <p>© 2026 Poker Academia · Contact: <a href="mailto:pokeracademia.contact@gmail.com">pokeracademia.contact@gmail.com</a></p>
+    <p><a href="./youtube-publisher.html">Shorts Publisher</a> · <a href="./youtube-publisher-privacy.html">Privacy Policy</a> · <a href="./youtube-publisher-terms.html">Terms of Use</a></p>
+  </div>
+</body>
+</html>
